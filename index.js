@@ -8,7 +8,7 @@ wsServer.on("connection", (socket) => {
   console.log("A client connected");
 
   socket.on("message", (msg) => {
-    const { method, playerId, gameId, location } = JSON.parse(msg);
+    const { method, gameId, location } = JSON.parse(msg);
 
     if (method === "createGame") {
       const GAME_ID = Math.floor(Math.random() * 90000) + 10000;
